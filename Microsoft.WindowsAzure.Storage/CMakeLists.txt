@@ -8,7 +8,8 @@ set(WARNINGS)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-option(BUILD_TESTS "Build test code" OFF)
+option(BUILD_TESTS "Build test codes" OFF)
+option(BUILD_SAMPLES "Build sample codes" OFF)
 
 # Platform (not compiler) specific settings
 if(UNIX)
@@ -36,9 +37,13 @@ if("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
   set(WARNINGS "-Wall -Wextra -Wunused-parameter -Wcast-align -Wcast-qual -Wconversion -Wformat=2 -Winit-self -Winvalid-pch -Wmissing-format-attribute -Wmissing-include-dirs -Wpacked -Wredundant-decls -Wunreachable-code")
   set(LINUX_SUPPRESSIONS "-Wno-deprecated -Wno-unknown-pragmas -Wno-reorder -Wno-unused-function -Wno-char-subscripts -Wno-switch -Wno-unused-but-set-parameter -Wno-unused-value -Wno-unused-local-typedefs -Wno-unused-parameter")
   set(WARNINGS "${WARNINGS} ${LINUX_SUPPRESSIONS}")
+
   set(LD_FLAGS "${LD_FLAGS} -Wl,-z,defs")
+ 
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-strict-aliasing")
+ 
   set(STRICT_CXX_FLAGS ${WARNINGS} "-Werror -pedantic")
+ 
   add_definitions(-DBOOST_LOG_DYN_LINK)
 else()
   message("-- Unknown compiler, success is doubtful.")
@@ -55,9 +60,19 @@ set(AZURESTORAGE_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/includes ${CASABLANCA_
 set(AZURESTORAGE_LIBRARY azurestorage)
 set(AZURESTORAGE_LIBRARIES ${AZURESTORAGE_LIBRARY} ${CASABLANCA_LIBRARIES} ${Boost_LIBRARIES} ${Boost_FRAMEWORK} ${OPENSSL_LIBRARIES} ${LibXML++_LIBRARIES} ${UUID_LIBRARIES} ${Glibmm_LIBRARIES})
 
+# Set version numbers centralized
+set (AZURESTORAGE_VERSION_MAJOR 0)
+set (AZURESTORAGE_VERSION_MINOR 5)
+set (AZURESTORAGE_VERSION_REVISION 0)
+
+# Add sources per configuration
 add_subdirectory(src)
 
 if(BUILD_TESTS)
   set(AZURESTORAGE_LIBRARY_TEST azurestoragetest)
   add_subdirectory(tests) 
+endif()
+
+if(BUILD_SAMPLES)
+  add_subdirectory(samples)
 endif()

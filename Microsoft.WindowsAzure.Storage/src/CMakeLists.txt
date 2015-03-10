@@ -48,23 +48,15 @@ if(UNIX)
     )
 endif()
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${WARNINGS} -Werror -pedantic")
-
 if ("${CMAKE_BUILD_TYPE}" MATCHES "Debug")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 endif()
 
 add_library(${AZURESTORAGE_LIBRARY} ${SOURCES})
 
-target_link_libraries(
-  ${AZURESTORAGE_LIBRARIES}
-  ${EXTRALINKS}
-)
+target_link_libraries(${AZURESTORAGE_LIBRARIES})
 
 # Portions specific to cpprest binary versioning.
-set (AZURESTORAGE_VERSION_MAJOR 0)
-set (AZURESTORAGE_VERSION_MINOR 5)
-set (AZURESTORAGE_VERSION_REVISION 0)
 if(UNIX)
   set_target_properties(${AZURESTORAGE_LIBRARY} PROPERTIES
     SOVERSION ${AZURESTORAGE_VERSION_MAJOR}.${AZURESTORAGE_VERSION_MINOR})

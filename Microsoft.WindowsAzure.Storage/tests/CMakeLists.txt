@@ -30,15 +30,9 @@ if(UNIX)
     )
 endif()
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${WARNINGS} -Werror -pedantic")
-
 add_executable(${AZURESTORAGE_LIBRARY_TEST} ${SOURCES})
 
-target_link_libraries(${AZURESTORAGE_LIBRARY_TEST}
-  ${AZURESTORAGE_LIBRARIES}
-  ${UnitTest++_LIBRARIES}
-  ${EXTRALINKS}
-  )
+target_link_libraries(${AZURESTORAGE_LIBRARY_TEST} ${AZURESTORAGE_LIBRARIES} ${UnitTest++_LIBRARIES})
 
 # Portions specific to cpprest binary versioning.
 if(UNIX)
