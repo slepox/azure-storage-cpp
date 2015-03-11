@@ -5,6 +5,7 @@ compiler:
 
 before_install:
   - sudo pip install cpp-coveralls
+  - sudo apt-get install libboost1.54-all-dev libssl-dev cmake libxml++2.6-dev uuid-dev libunittest++-dev
 
 script:
   - ./configure.sh && cd Microsoft.WindowsAzure.Storage/build.release && make
