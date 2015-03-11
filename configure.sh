@@ -8,6 +8,7 @@ ln -s libcpprest.so.2.3 libcpprest.so
 cd ..
 
 # Generate build script
+rm -fR Microsoft.WindowsAzure.Storage/build.release
 mkdir Microsoft.WindowsAzure.Storage/build.release
 cd Microsoft.WindowsAzure.Storage/build.release
 cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=ON -DBUILD_SAMPLES=ON
