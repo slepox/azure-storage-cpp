@@ -6,7 +6,7 @@ compiler:
 before_install:
   - sudo pip install cpp-coveralls
   - sudo apt-get install libssl-dev cmake libxml++2.6-dev uuid-dev libunittest++-dev
-  - sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu trusty main'
+  - sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ trusty main'
   - sudo apt-get update
   - sudo apt-get install libboost1.54-all-dev 
 
