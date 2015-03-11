@@ -5,6 +5,7 @@ compiler:
 
 before_install:
   - sudo pip install cpp-coveralls
+  - sudo apt-cache search libboost
   - sudo apt-get install libboost-all-dev 
   - sudo apt-get install libssl-dev
   - sudo apt-get install cmake
