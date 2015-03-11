@@ -183,3 +183,5 @@ $RECYCLE.BIN/
 # build folders under Linux
 Microsoft.WindowsAzure.Storage/build.*/
 
+# temp folder of casablanca
+casablanca
