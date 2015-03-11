@@ -5,10 +5,8 @@ compiler:
 
 before_install:
   - sudo pip install cpp-coveralls
-  - sudo apt-get install libssl-dev cmake libxml++2.6-dev uuid-dev libunittest++-dev
-  - sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ trusty universe'
-  - sudo apt-get update
-  - sudo apt-get install libboost1.54-all-dev 
+  - sudo apt-get install libssl-dev cmake libxml++2.6-dev uuid-dev libunittest++-dev 
+  - sudo apt-get install libboost1.54-all-dev # Travis run with Ubuntu 12.04 which doesn't have 1.54 yet so this will fail
 
 script:
   - ./configure.sh && cd Microsoft.WindowsAzure.Storage/build.release && make
