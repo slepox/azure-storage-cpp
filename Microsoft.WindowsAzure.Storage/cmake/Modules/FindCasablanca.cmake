@@ -17,10 +17,10 @@ find_path(CASABLANCA_INCLUDE_DIR
     $ENV{CASABLANCA_DIR}
     /usr/local/include
     /usr/include
-    ../casablanca
     ../../casablanca
   PATH_SUFFIXES 
     Release/include
+    include
     include
 )
 
@@ -35,11 +35,11 @@ find_library(CASABLANCA_LIBRARY
     $ENV{CASABLANCA_DIR}
     /usr/local
     /usr
-    ../casablanca
     ../../casablanca
   PATH_SUFFIXES
     lib
     Release/build.release/Binaries/
+    build.release/Binaries/
     build.release/Binaries/
 )
 
