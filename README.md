@@ -1,20 +1,20 @@
-﻿# Azure Storage Client Library for C++
+﻿# Microsoft Azure Storage Client Library for C++
 
-The Azure Storage Client Library for C++ allows you to build applications against Microsoft Azure Storage. For an overview of Azure Storage, see [Introduction to Microsoft Azure Storage](http://azure.microsoft.com/en-us/documentation/articles/storage-introduction/).
+Microsoft Azure Storage Client Library for C++ allows you to build applications against Microsoft Azure Storage. For an overview of Azure Storage, see [Introduction to Microsoft Azure Storage](http://azure.microsoft.com/en-us/documentation/articles/storage-introduction/).
 
-Note that the Azure Storage Client Library for C++ library is a CTP (Community Technology Preview) release.
+Note that Microsoft Azure Storage Client Library for C++ is a CTP (Community Technology Preview) release.
 
 # Features
 
-- Tables
-    - Create/Delete Tables
-    - Query/Create/Read/Update/Delete Entities
 - Blobs
-    - Create/Read/Update/Delete Blobs
+  - Create/Read/Update/Delete Blobs
+- Tables
+  - Create/Delete Tables
+  - Query/Create/Read/Update/Delete Entities
 - Queues
-    - Create/Delete Queues
-    - Insert/Peek Queue Messages
-    - Advanced Queue Operations
+  - Create/Delete Queues
+  - Insert/Peek Queue Messages
+  - Advanced Queue Operations
 
 # Getting started
 
@@ -23,7 +23,7 @@ Download the [NuGet Package](http://www.nuget.org/packages/wastorage).
 
 ## Requirements
 
-To call Azure services, you must first have an Azure subscription. Sign up for a [free trial](/en-us/pricing/free-trial/) or use your [MSDN subscriber benefits](/en-us/pricing/member-offers/msdn-benefits-details/).
+To call Azure services, you must first have an Azure subscription. Sign up for a [free trial](http://azure.microsoft.com/en-us/pricing/free-trial/) or use your [MSDN subscriber benefits](http://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/).
 
 ## Need Help?
 
@@ -32,10 +32,8 @@ Be sure to check out the [Azure Storage Forum](https://social.msdn.microsoft.com
 ## Collaborate & Contribute
 
 We gladly accept community contributions.
-
 - **Issues:** Report bugs on the [Issues page](https://github.com/Azure/azure-storage-cpp/issues) in GitHub.
 - **Forums:** Communicate with the Azure Storage development team on the [Azure Storage Forum](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=windowsazuredata) or [StackOverflow](http://stackoverflow.com/questions/tagged/azure).
-- **Source Code Contributions:** Please follow the [contribution guidelines for Azure open source](http://azure.github.io/guidelines.html) for instructions about contributing to the source project. 
 
 For general suggestions about Azure, use our [Azure feedback forum](http://feedback.azure.com/forums/34192--general-feedback).
 
@@ -43,7 +41,7 @@ For general suggestions about Azure, use our [Azure feedback forum](http://feedb
 
 ### Via Git
 
-To create a local clone of the source for the Azure Storage Client Library for C++ via `git`, type:
+To create a local clone of the source for Microsoft Azure Storage Client Library for C++ via `git`, type:
 
 ```bash
 git clone https://github.com/Azure/azure-storage-cpp.git
@@ -52,7 +50,7 @@ cd azure-storage-cpp
 
 ### Via NuGet
 
-To install the binaries for the Azure Storage Client Library for C++, type the following into the [NuGet Package Manager console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
+To install the binaries for Microsoft Azure Storage Client Library for C++, type the following into the [NuGet Package Manager console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 
 `Install-Package wastorage -Pre`
 
@@ -60,14 +58,20 @@ To install the binaries for the Azure Storage Client Library for C++, type the f
 
 ### C++ REST SDK
 
-The Azure Storage Client Library for C++ depends on the C++ REST SDK (codename "Casablanca") 2.4.0. It can be installed through [NuGet](http://www.nuget.org/packages/cpprestsdk/2.4.0) or downloaded directly from [CodePlex](http://casablanca.codeplex.com/releases/view/146873).
+Microsoft Azure Storage Client Library for C++ depends on the C++ REST SDK (codename "Casablanca") 2.4.0. It can be installed through [NuGet](http://www.nuget.org/packages/cpprestsdk/2.4.0) or downloaded directly from [CodePlex](http://casablanca.codeplex.com/releases/view/146873).
 
 ## Code Samples
 
-How-to topics focused around accomplishing specific tasks are available in the [samples folder](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage).
+How-to topics focused around accomplishing specific tasks are available in the [samples](/Microsoft.WindowsAzure.Storage/samples) folder.
+
+## Tests
+
+Unit tests for Microsoft Azure Storage Client Library for C++ are available at [tests](/Microsoft.WindowsAzure.Storage/tests) folder.
+
+Please download [UnitTest++](https://github.com/unittest-cpp/unittest-cpp), and add both [UnitTest++ project](https://github.com/unittest-cpp/unittest-cpp/blob/master/UnitTest%2B%2B/unittestpp_vs2008.vcproj) and [Microsoft.WindowsAzure.Storage.UnitTests project](/Microsoft.WindowsAzure.Storage/tests/Microsoft.WindowsAzure.Storage.UnitTests.vcxproj) to Microsoft Azure Storage Client Library for C++ [solution](/Microsoft.WindowsAzure.Storage.sln) to get unit tests working. Please use the project and solution files \*.v120.\* if you are using Visual Studio 2013.
 
 ## Getting Started on Linux
-As mentioned above, the Azure Storage Client Library for C++ depends on Casablanca. Follow [these instructions](https://casablanca.codeplex.com/wikipage?title=Setup%20and%20Build%20on%20Linux&referringTitle=Documentation) to compile it. Current version of the library depends on Casablanca version 2.4.0.
+As mentioned above, Microsoft Azure Storage Client Library for C++ depends on Casablanca. Follow [these instructions](https://casablanca.codeplex.com/wikipage?title=Setup%20and%20Build%20on%20Linux&referringTitle=Documentation) to compile it. Current version of the library depends on Casablanca version 2.4.0.
 
 Once this is complete, then:
 
@@ -82,7 +86,7 @@ sudo apt-get install libxml++2.6-dev libxml++2.6-doc uuid-dev
 ```
 - Build the SDK for Release:
 ```bash
-cd azure-storage-cpp/Microsoft.WIndowsAzure.Storage
+cd azure-storage-cpp/Microsoft.WindowsAzure.Storage
 mkdir build.release
 cd build.release
 CASABLANCA_DIR=<path to Casablanca> CXX=g++-4.8 cmake .. -DCMAKE_BUILD_TYPE=Release
