@@ -40,7 +40,7 @@ if("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
 
   set(LD_FLAGS "${LD_FLAGS} -Wl,-z,defs")
  
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-strict-aliasing -v")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-strict-aliasing")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${WARNINGS} -Werror -pedantic")
  
   add_definitions(-DBOOST_LOG_DYN_LINK)
