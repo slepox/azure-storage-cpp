@@ -22,6 +22,7 @@ find_path(CASABLANCA_INCLUDE_DIR
   PATH_SUFFIXES 
     Release/include
     include
+    include
 )
 
 # Library
@@ -40,6 +41,7 @@ find_library(CASABLANCA_LIBRARY
   PATH_SUFFIXES
     lib
     Release/build.release/Binaries/
+    build.release/Binaries/
     build.release/Binaries/
 )
 
